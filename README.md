@@ -1,2 +1,6 @@
-# Paper-with-Code
-논문 구현
+## 논문 리뷰 & 구현
+
+#### 1. Word2Vec
+- Paper : [Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/pdf/1301.3781.pdf)
+- Review : 
+- Code : 

@@ -10,7 +10,12 @@
   > - [Paper Review](https://oneul-hyeon.tistory.com/518)
   > - [Code Review(CBOW)](https://oneul-hyeon.tistory.com/530)
   > - [Code Review(Skip-gram)](https://oneul-hyeon.tistory.com/531)
-
+- #### 02 : NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE
+  > [Paper](https://arxiv.org/pdf/1409.0473.pdf), [Presentaion](https://github.com/NLP-Study-JAPPU/Basic-Course/blob/main/Presentations/Seq2Seq_24.03.03_%E1%84%92%E1%85%AA%E1%86%BC%E1%84%92%E1%85%A7%E1%86%AB%E1%84%90%E1%85%A2.pdf)</br> 
+  > Bahdanau, Dzmitry, Kyunghyun Cho, and Yoshua Bengio. "Neural machine translation by jointly learning to align and translate." arXiv preprint arXiv:1409.0473 (2014). 
+  > - Keywords : `Seq2Seq`, `Attention`
+  > - Date : 2024.03.03 ~
+  > - [Paper Review](https://oneul-hyeon.tistory.com/544)
 
 
 

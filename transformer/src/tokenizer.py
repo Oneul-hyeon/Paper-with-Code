@@ -3,7 +3,7 @@ from tokenizers import Tokenizer
 from tqdm import tqdm
 
 class GetTokenizer() :
-    def __init__(self) :
+    def __init__(self, train=True) :
         NOW_DIR = os.path.dirname(__file__)
         ROOT_PATH = os.path.abspath(os.path.join(NOW_DIR, os.pardir))
         TOKENIZER_PATH = os.path.join(ROOT_PATH, "tokenizer")
@@ -14,13 +14,14 @@ class GetTokenizer() :
         self.tokenizer_kr=Tokenizer.from_file(TOKENIZER_FILE_KR)
         self.tokenizer_en=Tokenizer.from_file(TOKENIZER_FILE_EN)
 
-        # padding function
-        self.tokenizer_kr.enable_padding(pad_id = self.tokenizer_kr.token_to_id("<pad>"),
-                                         pad_token="<pad>",
-                                         pad_to_multiple_of=8)
-        self.tokenizer_en.enable_padding(pad_id = self.tokenizer_en.token_to_id("<pad>"),
-                                         pad_token="<pad>",
-                                         pad_to_multiple_of=8)
+        if train :
+            # padding function
+            self.tokenizer_kr.enable_padding(pad_id = self.tokenizer_kr.token_to_id("<pad>"),
+                                            pad_token="<pad>",
+                                            pad_to_multiple_of=8)
+            self.tokenizer_en.enable_padding(pad_id = self.tokenizer_en.token_to_id("<pad>"),
+                                            pad_token="<pad>",
+                                            pad_to_multiple_of=8)
         
     def kr_encode(self, sequences) :
         encode_batch=self.tokenizer_kr.encode_batch(sequences)
@@ -34,7 +35,7 @@ class GetTokenizer() :
         return [encoding.ids for encoding in encode_batch]
     
     def en_decode(self, sequence_ids) :
-        return self.tokenizer_en.decode(sequence_ids, skip_special_tokens=False)
+        return self.tokenizer_en.decode(sequence_ids, skip_special_tokens=True)
     
     def kr_vocab_size(self) :
         return self.tokenizer_kr.get_vocab_size()

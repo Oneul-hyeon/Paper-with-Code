@@ -20,7 +20,6 @@ def MakeTokenizer(sequences, vocab_size, language, save_file_path) :
     tokenizer.train_from_iterator(sequences, trainer)
 
     # setting decoder processor
-    # tokenizer.decoder = decoders.ByteLevel() if language=="en" else decoders.BPEDecoder()
     tokenizer.decoder = decoders.ByteLevel()
     
     # save tokeniezr

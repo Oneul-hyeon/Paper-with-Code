@@ -130,7 +130,7 @@ if __name__=="__main__" :
     train_dataloader = TranslationDataLoader(data=train_dataset, batch_size=batch_size)
     valid_dataloader = TranslationDataLoader(data=valid_dataset, batch_size=batch_size)
     
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     
     model = Transformer(src_vocab_size=src_vocab_size,
                     tgt_vocab_size=tgt_vocab_size,
@@ -150,7 +150,7 @@ if __name__=="__main__" :
                           d_model=d_model,
                           warmup_steps=warmup_steps)
     
-    epochs = 10
+    epochs = 5
     logging.info("training start...")
     best_loss = float("INF")
     train_loss_history, valid_loss_history = [], []
